@@ -1,0 +1,333 @@
+/*regles css génerales*/
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  user-select: none;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+/*conteneur principale*/
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/*page principale*/
+.contenu-page {
+  margin: auto;
+  width: 75%;
+}
+
+/*tire de la page principale*/
+.contenu-page__titre {
+  font-size: 2.5em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/*description de la page principale*/
+.contenu-page__description {
+  margin: 30px auto;
+  font-size: 2em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/*description1*/
+.contenu-page__description-1 {
+  width: 75%;
+  margin: 50px auto;
+}
+
+/*description2*/
+.contenu-page__description-2 {
+  width: 75%;
+  text-align: left;
+  margin: 50px auto;
+}
+
+/*zone avec image et texte de la page principale*/
+.zone-image-principale {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 250px;
+  width: 60%;
+  margin: auto;
+}
+
+/*image de page principale*/
+.image-principale {
+  margin: auto 20px;
+}
+
+/*texte de la page principale*/
+.texte-image-principale {
+  margin: 100px auto auto 20px;
+  width: 50%;
+}
+
+/*description3*/
+.contenu-page__description-3 {
+  width: 75%;
+  text-align: left;
+  margin: 50px auto;
+}
+
+/*bouton pour activer le pop up*/
+#click {
+  display: none;
+}
+
+/*action ACTIVER le pop up*/
+#click:checked ~ .pop-up {
+  opacity: 1;
+  visibility: visible;
+}
+
+.click-me {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(70, 134, 68);
+  color: white;
+  border: 1px rgb(129, 252, 129) solid;
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer;
+  justify-content: center;
+  padding-top: 15px;
+  margin: 30px auto auto 150px;
+  font-weight: bold;
+}
+
+#click-me:hover {
+  background-color: rgb(57, 121, 55);
+  font-size: 1.2em;
+}
+/* fin de l'action*/
+
+/*règles CSS du pop up*/
+.pop-up {
+  width: 800px;
+  height: 750px;
+  top: 20px;
+  left: 30%;
+  border: 2px rgb(115, 143, 62) solid;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+  border-radius: 25px;
+  box-shadow: 3px 2px 12px 4px rgba(144, 236, 100, 0.4);
+  position: absolute;
+  opacity: 1;
+  visibility: hidden;
+  transition: 0.4s ease-in-out;
+}
+
+/*image servant de background*/
+.image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  border-radius: 30px;
+  margin: auto;
+  position: absolute;
+}
+
+/*bouton fermer*/
+#bouton-fermer {
+  width: 30px;
+  cursor: pointer;
+  right: 10px;
+  top: 15px;
+  position: absolute;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: grey;
+  display: table;
+  margin: 10px 10px auto auto;
+}
+
+.fa-times {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#bouton-fermer ~ .pop-up {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*titre du pop up*/
+.pop-up__titre {
+  margin: 40px auto 40px auto;
+  font-weight: bold;
+  font-size: 2.5em;
+  color: white;
+  font-weight: bold;
+}
+/*texte 1*/
+.pop-up__texte-1 {
+  margin: 30px auto;
+  color: antiquewhite;
+  font-style: italic;
+  font-size: 1.3em;
+  width: 50%;
+}
+
+/*texte 2*/
+.pop-up__texte-2 {
+  margin: 25px auto;
+  color: bisque;
+  font-size: 1.3em;
+  font-family: "Times New Roman", Times, serif;
+  width: 50%;
+}
+
+/*texte 3*/
+.pop-up__texte-3 {
+  margin: 25px auto;
+  color: azure;
+  width: 50%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  justify-content: center;
+  font-size: 1.3em;
+}
+
+/*email*/
+#email {
+  width: 350px;
+  height: 40px;
+  padding-left: 10px;
+  color: grey;
+  background-color: white;
+  font-size: 1.1em;
+  margin: 20px auto;
+  border: none;
+}
+
+/*bouton valider*/
+.bouton-valider {
+  width: 350px;
+  height: 40px;
+  text-align: center;
+  border-radius: 45px;
+  background-color: rgb(11, 91, 94);
+  color: white;
+  border: none;
+  font-size: 1.2em;
+}
+
+/*media queries pour 1280px */
+@media screen and (max-width: 1280px) {
+  .pop-up {
+    left: 5%;
+  }
+}
+/*media queries pour tablettes de  1024px
+certains styles sont rrécrits de nouveau pour s'adapter à la taille
+de l'écran*/
+@media screen and (max-width: 1024px) {
+  .pop-up {
+    width: 710px;
+    left: 10%;
+    margin: auto;
+    height: 800px;
+  }
+
+  .image-page {
+    margin: 20px auto;
+  }
+
+  .texte-image-principale,
+  .contenu-page__description-3 {
+    display: none;
+  }
+}
+
+/*media queries pour tablettess de  768px*/
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  /*réduire l'interligne entre les textes*/
+  .contenu-page__description1,
+  .contenu-page__description-2,
+  .contenu-page__description-3 {
+    margin: 20px auto 5px auto;
+  }
+
+  /*pop- up*/
+  .pop-up {
+    width: 85vw;
+    height: 800px;
+    left: 5%;
+    top: 100px;
+  }
+}
+
+/*media queries pour telephones de  576px */
+@media screen and (max-width: 576px) {
+  .container {
+    width: 90%;
+  }
+
+  .image-page {
+    margin: 20px auto;
+  }
+
+  .texte-image-principale,
+  .contenu-page__description-3 {
+    display: none;
+  }
+
+  /*pop up*/
+  .pop-up {
+    top: 800px;
+    width: 90vw;
+    left: 5%;
+    height: auto;
+  }
+  .pop-up__titre {
+    width: 80%;
+    margin: 40px auto;
+    font-size: 2em;
+  }
+  .pop-up__texte-1 {
+    width: 90%;
+    margin: 10px auto;
+    font-size: 1.1em;
+  }
+
+  .pop-up__texte-2 {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .pop-up__texte-3 {
+    width: 90%;
+    margin: 10px auto;
+  }
+  /*email*/
+  .email {
+    width: 250px;
+  }
+
+  /*bouton-valider*/
+  .bouton-valider {
+    width: 250px;
+  }
+}
